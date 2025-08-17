@@ -20,4 +20,4 @@ Implementar o backend (motor de funcionamento) de um sistema bancário simplific
 1. **Banco de Dados**:
    ```sql
    -- Executar o script DDL fornecido no MySQL
-   mysql -u usuario -p < script_ddl.sql
+   mysql -u root -p < src/main/resources/DDLbancorrw.sql
