@@ -1,6 +1,5 @@
 package bancorrw.dao;
 
-import java.sql.Connection;
 import java.sql.SQLException;
 import java.io.IOException;
 

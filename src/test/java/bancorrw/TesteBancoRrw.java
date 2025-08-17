@@ -65,8 +65,8 @@ public class TesteBancoRrw{
         //exlcui todos os registros do BD
         cliDao.deleteAll();
 
-
     }
+
     @Test
     public void t01verificaEstruturaClassePessoa() throws ClassNotFoundException {
         Class c = Class.forName("bancorrw.cliente.Pessoa");

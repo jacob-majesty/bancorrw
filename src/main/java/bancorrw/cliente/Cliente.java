@@ -23,7 +23,6 @@ public class Cliente extends Pessoa {
     }
 
     public void setContaCorrente(ContaCorrente contaCorrente) throws Exception {
-        // Only validate if we already have an account and it's different from the new one
         if (this.contaCorrente != null &&
                 !this.contaCorrente.equals(contaCorrente) &&
                 this.contaCorrente.getSaldo() != 0) {
