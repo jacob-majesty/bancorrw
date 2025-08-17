@@ -23,19 +23,17 @@ public class Cliente extends Pessoa {
     }
 
     public void setContaCorrente(ContaCorrente contaCorrente) throws Exception {
-        this.contaCorrente = contaCorrente;
-    }
-
-   /*
-    public void setContaCorrente(ContaCorrente contaCorrente) throws Exception {
-        if (this.contaCorrente != null && this.contaCorrente.getSaldo() != 0) {
-            String mensagemErro = String.format(Locale.US,
-                    "Não pode modificar a conta corrente, pois saldo da original não está zerado. Para fazer isso primeiro zere o saldo da conta do cliente. Saldo=%.1f",
-                    this.contaCorrente.getSaldo());
-            throw new Exception(mensagemErro);
+        // Only validate if we already have an account and it's different from the new one
+        if (this.contaCorrente != null &&
+                !this.contaCorrente.equals(contaCorrente) &&
+                this.contaCorrente.getSaldo() != 0) {
+            throw new Exception(String.format(Locale.US,
+                    "Não pode modificar a conta corrente, pois saldo da original não está zerado. " +
+                            "Para fazer isso primeiro zere o saldo da conta do cliente. Saldo=%.1f",
+                    this.contaCorrente.getSaldo()));
         }
         this.contaCorrente = contaCorrente;
-    } */
+    }
 
     public List<ContaInvestimento> getContasInvestimento() {
         return contasInvestimento;
